@@ -1,6 +1,10 @@
 
 
 const Gadgets = () => {
+    
+
+
+
     return (
         <div>
             
