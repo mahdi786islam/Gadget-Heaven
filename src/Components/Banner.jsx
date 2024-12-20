@@ -15,7 +15,7 @@ const Banner = () => {
         </button>
       </div>
       <img 
-      className="w-1/2 h-1/2 absolute left-1/4 top-1/2 border border-white p-4 rounded-md "
+      className="w-1/2 h-1/2 absolute left-1/4 top-1/2 border-2 border-white p-4 rounded-md "
       src="https://i.ibb.co.com/1r7q1CP/banner.jpg" alt="" />
     </div>
   );
