@@ -1,6 +1,10 @@
+import { Outlet } from "react-router-dom";
+
+
 const Banner = () => {
   return (
-    <div className="container mx-auto text-center bg-purple-600 min-h-96 rounded-b-md">
+    <div>
+      <div className="container mx-auto text-center bg-purple-600 min-h-96 rounded-b-md mb-80">
       <div className="text-white py-24">
         <h1 className="text-5xl font-bold">
           Upgrade Your Tech Accessorize with <br /> Gadget Heaven Accessories
@@ -15,8 +19,12 @@ const Banner = () => {
         </button>
       </div>
       <img 
-      className="w-1/2 h-1/2 absolute left-1/4 top-1/2 border-2 border-white p-4 rounded-md "
+      className="w-1/3 h-1/3 absolute left-1/3 top-1/2 border-2 border-white p-4 rounded-md "
       src="https://i.ibb.co.com/1r7q1CP/banner.jpg" alt="" />
+    </div>
+    <div>
+      <Outlet></Outlet>
+    </div>
     </div>
   );
 };

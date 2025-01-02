@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div className="container mx-auto">
@@ -25,16 +27,16 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a>Home</a>
+                <Link to={"/"}>Home</Link>
               </li>
               <li>
-                <a>Statistics</a>
+                <Link to={"/statistics"}>Statistics</Link>
               </li>
               <li>
-                <a>Dashboard</a>
+                <Link to={"/dashboard"}>Dashboard</Link>
               </li>
               <li>
-                <a>Offers</a>
+                <Link to={"/offers"}>Offers</Link>
               </li>
             </ul>
           </div>
@@ -43,16 +45,16 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Home</a>
+              <Link to={"/"}>Home</Link>
             </li>
             <li>
-              <a>Statistics</a>
+              <Link to={"/statistics"}>Statistics</Link>
             </li>
             <li>
-              <a>Dashboard</a>
+              <Link to={"/dashboard"}>Dashboard</Link>
             </li>
             <li>
-              <a>Offers</a>
+              <Link to={"/offers"}>Offers</Link>
             </li>
           </ul>
         </div>
@@ -73,7 +75,7 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          <button className="bg-white p-2 rounded-full text-black hover:bg-slate-300">             
+          <button className="bg-white p-2 rounded-full text-black hover:bg-slate-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
