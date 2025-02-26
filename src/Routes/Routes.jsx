@@ -5,6 +5,7 @@ import Gadgets from "../Components/Gadgets";
 import Statistics from "../Components/Statistics";
 import Dashboard from "../Components/Dashboard";
 import Offers from "../Components/Offers";
+import GadgetDetails from "../Components/GadgetDetails";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/offers",
         element: <Offers></Offers>
+      },
+      {
+        path: "/details/:id",
+        element: <GadgetDetails></GadgetDetails>
       }
     
     ]

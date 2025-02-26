@@ -1,9 +1,15 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [home, setHome]=useState(true)
+  const handleHome = (e) => {
+    setHome(e)
+    console.log(home)
+  }
   return (
     <div className="container mx-auto">
-      <div className="navbar bg-purple-600 text-white mt-1 rounded-t-md">
+      <div className={home?"navbar bg-purple-600 text-white mt-1 rounded-t-md":"navbar bg-white text-purple-600 mt-1 rounded-t-md"}>
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -27,16 +33,16 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <Link to={"/"}>Home</Link>
+                <Link onClick={()=> handleHome(true)} to={"/"}>Home</Link>
               </li>
               <li>
-                <Link to={"/statistics"}>Statistics</Link>
+                <Link onClick={()=> handleHome(false)} to={"/statistics"}>Statistics</Link>
               </li>
               <li>
-                <Link to={"/dashboard"}>Dashboard</Link>
+                <Link onClick={()=> handleHome(false)} to={"/dashboard"}>Dashboard</Link>
               </li>
               <li>
-                <Link to={"/offers"}>Offers</Link>
+                <Link onClick={()=> handleHome(false)} to={"/offers"}>Offers</Link>
               </li>
             </ul>
           </div>
@@ -44,21 +50,22 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link to={"/"}>Home</Link>
-            </li>
-            <li>
-              <Link to={"/statistics"}>Statistics</Link>
-            </li>
-            <li>
-              <Link to={"/dashboard"}>Dashboard</Link>
-            </li>
-            <li>
-              <Link to={"/offers"}>Offers</Link>
-            </li>
+          <li>
+                <Link onClick={()=> handleHome(true)} to={"/"}>Home</Link>
+              </li>
+              <li>
+                <Link onClick={()=> handleHome(false)} to={"/statistics"}>Statistics</Link>
+              </li>
+              <li>
+                <Link onClick={()=> handleHome(false)} to={"/dashboard"}>Dashboard</Link>
+              </li>
+              <li>
+                <Link onClick={()=> handleHome(false)} to={"/offers"}>Offers</Link>
+              </li>
           </ul>
         </div>
         <div className="navbar-end gap-4 pr-4">
+          <Link to={"/dashboard"}>
           <button className="bg-white p-2 rounded-full text-black hover:bg-slate-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -75,6 +82,8 @@ const Navbar = () => {
               />
             </svg>
           </button>
+          </Link>
+          <Link to={"/dashboard"}>
           <button className="bg-white p-2 rounded-full text-black hover:bg-slate-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -91,6 +100,7 @@ const Navbar = () => {
               />
             </svg>
           </button>
+          </Link>
         </div>
       </div>
     </div>
