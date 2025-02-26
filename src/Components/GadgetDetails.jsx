@@ -1,25 +1,28 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { addToCart, addToWishList } from "../Utility/addtoDB";
+import Swal from "sweetalert2";
 
 const GadgetDetails = () => {
   const { id } = useParams();
   const [gadgets, setGadgets] = useState([]);
 
   useEffect(() => {
-    fetch("data.json")
+    fetch("/data.json")
       .then((res) => res.json())
       .then((data) => setGadgets(data));
   }, []);
   const Id = parseInt(id);
-  const gadget = gadgets.find((g) => g.id === Id);
+  const gadget = gadgets.find((g) => g?.id === Id);
 //   console.log(gadget);
 
 const handleAddToCart = () => {
     addToCart(id)
+    Swal.fire("Gadget Added to Cart");
 }
 const handleAddToWishlist = (id) => {
     addToWishList(id)
+    Swal.fire("Gadget Added to Wishlist");
 }
   return (
     <div>
@@ -43,8 +46,8 @@ const handleAddToWishlist = (id) => {
               <p className="py-2">
               Rating:{gadget?.rating}
             </p>
-            <button onClick={()=> handleAddToCart(gadget.id)} className="btn bg-purple-600 rounded-full text-white">Add To Cart</button>
-            <button onClick={()=> handleAddToWishlist(gadget.id)} className="btn bg-purple-600 rounded-full text-white">Add To Wishlist</button>
+            <button onClick={()=> handleAddToCart(gadget?.id)} className="btn bg-purple-600 rounded-full text-white">Add To Cart</button>
+            <button onClick={()=> handleAddToWishlist(gadget?.id)} className="btn bg-purple-600 rounded-full text-white">Add To Wishlist</button>
           </div>
         </div>
       </div>
