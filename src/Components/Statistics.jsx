@@ -5,7 +5,7 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
 const Statistics = () => {
   const [gadgets, setGadgets] = useState([])
   useEffect(() => {
-    fetch("../../public/data.json")
+    fetch("data.json")
       .then((res) => res.json())
       .then((data) => setGadgets(data));
   }, []);
